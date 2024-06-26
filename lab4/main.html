@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB4</title>
+    <script src="D:\KAI\WEB\labs\lab3\first.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e0c214;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        input[type="text"] {
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #result_1 {
+            margin: 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>Год, Месяц, День</th>
+        </tr>
+        <tr>
+            <td id="yearMonthDay"></td>
+        </tr>
+        <tr>
+            <th>День недели</th>
+        </tr>
+        <tr>
+            <td id="dayOfWeek"></td>
+        </tr>
+    </table>
+
+    <script>
+        const daysOfWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+        const months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентяррь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+
+        function displayCurrentDate() {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = months[now.getMonth()];
+            const dayOfMonth = now.getDate();
+            const dayOfWeek = daysOfWeek[now.getDay()];
+
+            document.getElementById('yearMonthDay').textContent = `${year}, ${month} ${dayOfMonth}`;
+            document.getElementById('dayOfWeek').textContent = dayOfWeek;
+        }
+        
+        displayCurrentDate();
+    </script>
+
+
+    <h1> Количество дней до сессии</h1>
+
+    <input type="text" id="session" readonly>
+    <script>
+        function displaySessionDate() {
+            const now = new Date();
+            const SessionDate = new Date(2024, 5, 10);
+            const daysBeforeSession = Math.ceil((SessionDate.getTime() - now.getTime()) / 86400000);
+    
+            document.getElementById('session').value = daysBeforeSession;
+        }
+    
+        displaySessionDate();
+    </script>
+    
+    <h1>Напечатать k-ю цифру последовательности, в которой выписаны подряд все натуральные числа</h1>
+
+    <table>
+        <tr>
+          <td>Введите число k:</td>
+          <td>
+            <input type="text" id="parametr_2">
+            <input type="button" value="Вычислить" onclick="calculate();">
+          </td>
+        </tr>
+        <tr>
+          <td>Результат: </td>
+          <td><p id="result_2"></p></td>
+        </tr>
+      </table>
+    
+      <script type="text/javascript">
+        function findKthDigit(k) {
+            let sequence = '';
+            let number = 1;
+
+            while (sequence.length < k) {
+                sequence += number.toString();
+                number++; 
+            }
+
+            return sequence[k - 1]; 
+        }
+
+        function calculate() {
+          var inputValue = document.getElementById("parametr_2").value;
+          var k = findKthDigit(Number(inputValue));
+          document.getElementById("result_2").innerHTML = k;
+        }
+      </script>
+
+    <h1>Узнать кол-во прошедших дней с памятной даты</h1>
+
+    <button onclick="showDatePicker()">Выбрать дату</button>
+
+    <p id="date-picker" style="display: none;">
+    <label for="memorable-date">Выберите дату:</label>
+    <input type="date" id="memorable-date">
+    <button onclick="calculateDays()">Посчитать дни</button>
+    </p>
+
+    <p>
+    <label for="days-since">Количество дней, которое минуло после неё:</label>
+    <input type="text" id="days-since" readonly>
+    </p>
+
+    <script>
+    function showDatePicker() {
+        document.getElementById('date-picker').style.display = 'block';
+    }
+
+    function calculateDays() {
+        const memorableDateInput = document.getElementById('memorable-date');
+        const memorableDate = new Date(memorableDateInput.value);
+        const today = new Date();
+        const timeDifference = today.getTime() - memorableDate.getTime();
+        const daysDifference = Math.ceil(timeDifference / (1000 * 3600 * 24));
+
+        document.getElementById('days-since').value = daysDifference;
+    }
+    </script>
+
+    <h1>Сумма членов числовой последовательности</h1>
+    <button onclick="getInputData()">Ввести данные</button>
+    <p>
+    <label for="first-term-number">Номер первого члена:</label>
+    <input type="text" id="first-term-number" readonly>
+    </p>
+    <p>
+    <label for="term-count">Количество членов:</label>
+    <input type="text" id="term-count" readonly>
+    </p>
+    <p>
+    <button onclick="calculateSum()">Вычислить сумму</button>
+    </p>
+    <p>
+    <label for="sum-result">Сумма:</label>
+    <input type="text" id="sum-result" readonly>
+    </p>
+
+    <script>
+    function getInputData() {
+        const firstTermNumber = prompt('Введите номер первого члена:');
+        const termCount = prompt('Введите количество членов:');
+
+        if (isNaN(firstTermNumber) || isNaN(termCount) || termCount <= 0) {
+        alert('Введены некорректные данные');
+        return;
+        }
+
+        document.getElementById('first-term-number').value = firstTermNumber;
+        document.getElementById('term-count').value = termCount;
+    }
+
+    function calculateSum() {
+        const firstTermNumber = document.getElementById('first-term-number').value;
+        const termCount = document.getElementById('term-count').value;
+
+        let sum = 0;
+        for (var n = 0; n < parseInt(termCount); n++) {
+            sum += Math.pow(-2, 3 * (n + parseInt(firstTermNumber)));
+        }
+
+        document.getElementById('sum-result').value = sum;
+    }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Index</title>
+    <link rel="stylesheet" href="static/styles/style.css">
+    <script src="static/script/script.js"></script>
+</head>
+
+<body onload="date()">
+
+    <div class="headbar">
+        <table>
+            <tr>
+                <td id="weekday"></td>
+            </tr>
+            <tr>
+                <td id="date"></td>
+            </tr>
+            <tr>
+                <td id="year"></td>
+            </tr>
+        </table>
+        <div><h1>Лабораторная работа №4</h1></div>
+    </div>
+
+    <div class="back">
+        <div class="sidebar"></div>
+        <div class="content">
+            <h2>Вычислить сумму тех чисел из заданного отрезка [a,b] (a, b — натуральные), в запись которых входит цифра k.</h2>
+            <div class="back">
+                <div class="processor">
+                    <input type="number" id="k" placeholder="k" />
+                    <input type="number" id="a" placeholder="a" />
+                    <input type="number" id="b" placeholder="b" />
+                    <button onclick="checkNumbers()">Рассчитать</button>
+                </div>
+                <div class="content">
+                    <h2 id="result"></h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="sidebar"></div>
+        <div class="content">
+            <h2>До сессии (в днях):</h2>
+            <input type="text" id="dateS" />
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="sidebar"></div>
+        <div class="content">
+            <input type="button" value="Введите дату" onclick="getMemorableDate()">
+            <button id="memorableButton">Памятная дата</button>
+        </div>
+    </div>
+
+    <div class="back">
+        <div class="sidebar"></div>
+        <div class="content">
+            <h2>Вычисление суммы числовой последовательности</h2>
+            <p>Введите номер первого члена последовательности и количество членов через запятую:</p>
+            <form>
+                <input type="text" id="sequenceInput" name="sequenceInput"><br><br>
+                <button type="button" onclick="calculateSum()">Вычислить сумму</button>
+            </form>
+            <h2 id="result2"></h2>
+        </div>
+    </div>
+</body>
+</html>

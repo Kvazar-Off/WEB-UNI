@@ -1,0 +1,166 @@
+﻿body {
+    background-color: #795548;
+    margin: 0;
+}
+
+.headbar {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    padding: 10px;
+    margin: 10px;
+    margin-top: 80px;
+    text-align: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+    .headbar h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        text-align: center;
+    }
+
+
+.back {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+    
+    .back .fisrtTask {
+        width: calc(60% - 10px);
+        background-color: #4CAF50;
+        display: flex;
+        justify-content: space-between;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+
+        .back .fisrtTask .graphBG {
+            margin: 10px;
+            width: 400px;
+            height: 500px;
+            background-color: #FFFFFF;
+        }
+
+        .back .fisrtTask .graphBTNS {
+            width: auto;
+            height: 100px;
+            margin: 10px;
+        }
+
+        .back .fisrtTask span {
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .back .fisrtTask input[type="button"], .back .fisrtTask button {
+            width: calc(50% - 10px);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-style: italic;
+            text-align: justify;
+            background-color: #FFEB3B;
+            cursor: pointer;
+            color: #8b0000;
+            text-align: center;
+        }
+
+            .back .fisrtTask input[type="button"]:hover, .back .fisrtTask button:hover {
+                background-color: #e94646;
+            }
+
+    .back .secondTask {
+        width: calc(40% - 10px);
+        background-color: #4CAF50;
+        justify-content: space-evenly;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+    }
+    
+        .back .secondTask span {
+            margin : 10px;
+            color: #FFFFFF;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            text-align: justify;
+        }
+
+        .back .secondTask .container {
+            width: 40%;
+            display: flex;
+            justify-content: space-between;
+        }
+            .back .secondTask .container label {
+                width: auto;
+                margin: 0px 10px 20px 10px;
+                color: #FFFFFF;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 20px;
+                text-align: justify;
+                display: flex;
+                justify-content: space-around;
+            }
+
+        .back .secondTask select {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 15px;
+            font-style: italic;
+            text-align: justify;
+        }
+
+        .back .secondTask input[type="button"], .back .secondTask button {
+            margin-left: 40px;
+            width: calc(40% - 10px);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 16px;
+            font-style: italic;
+            text-align: justify;
+            background-color: #FFEB3B;
+            cursor: pointer;
+            color: #8b0000;
+            text-align: center;
+        }
+
+            .back .fisrtTask input[type="button"]:hover, .back .fisrtTask button:hover {
+                background-color: #e94646;
+            }
+
+        .back .secondTask .currentHand {
+            width: auto;
+            height: 150px;
+        }
+
+        .back .secondTask #task2Res {
+            color: white;
+            margin: 20px 0px 20px 10px;
+            font-size: 18px;
+            font-style: italic;
+            text-align: justify;
+        }
+
+        .back .secondTask #handList{
+            display:flex;
+            width: 200px;
+        }
+
+
+.dot {
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    background-color: black;
+    font-size: 10px;
+}

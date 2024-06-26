@@ -1,0 +1,230 @@
+﻿body {
+    background: #84A98C;
+    margin: 0;
+}
+
+.back {
+    display: flex;
+    padding-bottom: 0px;
+}
+
+
+
+.headbar {
+    /*width: 100%;*/
+    background-color: #2F3E46;
+    padding: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    min-width: 180px;
+    font-family: Arial;
+    display:flex;
+}
+
+    .headbar table {
+        display: block inline-block;
+        background-color: #CAD2C5;
+        border-radius: 10px;
+        font-size: 34px;
+        color: #2F3E46;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .headbar tr {
+        background-color: #CAD2C5;
+        border-radius: 10px;
+        font-size: 34px;
+    }
+
+    .headbar td {
+        font-family: Arial;
+        font-weight:bold;
+        background-color: #CAD2C5;
+        border-radius: 10px;
+        font-size: 16px;
+    }
+
+    .headbar h1 {
+        color: #CAD2C5;
+    }
+
+    .content {
+        display: block-inline;
+        width: 100%;
+        background-color: #CAD2C5;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+        margin-left: 10px;
+        font-family: Arial;
+        margin-bottom: 0px;
+    }
+
+    /* Стили для заголовка в .content */
+        .content h2 {
+            display: inline-block;
+            color: #2F3E46;
+        }
+    /* Стили для текста в .content */
+        .content p {
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            color: #2F3E46;
+            font-size: 18px;
+
+        }
+    /* Стили для списка в .content */
+    .content ul {
+        color: #2F3E46;
+        font-size: 18px;
+    }
+    /* Стили для элементов списка в .content */
+    .content ul li {
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    /* Стили для blockquote в .content */
+    .content blockquote {
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        color: #2F3E46;
+        font-size: 18px;
+    }
+
+    .content button {
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        color: #2F3E46;
+        font-size: 18px;
+    }
+
+    .content input {
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        color: #2F3E46;
+        font-size: 18px;
+        display: inline-block;
+    }
+
+.blockquote_a {
+    text-align: end;
+    color: #2F3E46;
+    font-size: 16px;
+}
+
+/* .sidebar */
+.sidebar {
+    /*    width: 10%;*/
+    background-color: #2F3E46;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    margin-right: 10px;
+    display: inline-block;
+    width: auto;
+    font-family: Arial;
+    margin-bottom: 0px;
+}
+
+    /* Стили для списка в .sidebar */
+    .sidebar ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Стили для заголовка в .sidebar */
+    .sidebar h1 {
+        color: #CAD2C5;
+    }
+
+
+    /* Стили для элементов списка в .sidebar */
+    .sidebar ul li {
+        margin-bottom: 10px;
+    }
+
+    /* Стили для ссылок в .sidebar */
+    .sidebar a {
+        font-size: 24px;
+        text-decoration: none;
+        color: #CAD2C5;
+        transition: color 0.3s ease;
+    }
+
+    /* Стили для ссылок при наведении в .sidebar */
+    .sidebar a:hover {
+        color: #ffffff;
+    }
+
+
+    /* Стили для заголовка в .sidebar */
+    .headbar h1 {
+        color: #CAD2C5;
+    }
+
+    /* Стили для ссылок при наведении в .sidebar */
+    .headbar h1:hover {
+        color: #ffffff;
+    }
+
+
+
+.processor {
+    width: 20%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    padding-bottom: 0px;
+    font-family: Arial;
+}
+
+    .processor input {
+        width: calc(100% - 20px); /* Учитывает отступы */
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        color: #2F3E46;
+        font-size: 18px;
+        text-align: right;
+        margin-bottom: 20px;
+        
+    }
+
+
+
+    .processor button {
+        width: calc(100%); /* Учитывает отступы */
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        color: #2F3E46;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .processor button:hover {
+        color: #CAD2C5;
+    }
+
+    .processor h2 {
+        padding: 10px;
+        color: #CAD2C5;
+    }

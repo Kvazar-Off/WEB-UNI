@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB3</title>
+    <script src="D:\KAI\WEB\labs\lab3\first.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #54ceba;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        td {
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .r1 {
+            background-color: gray;
+        }
+
+        .r2 {
+            background-color: darkgray;
+        }
+        .black-piece {
+            background-color: #000;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+        }
+        .white-piece {
+            background-color: #fff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        input[type="text"] {
+            /* width: 70%; */
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="button"] {
+    
+            padding: 8px;
+            box-sizing: border-box;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+
+        #result_1 {
+            margin: 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Приветствие по ФИО</h1>
+
+    <button onclick="main()">Начать</button>
+
+    <h1>Расстановка шашек на доску 8 на 8. Чёрные слева.</h1>
+
+    <script type="text/javascript">
+        var str, sel, n = 8, i, j;
+        document.write("<table>");
+        for (i = 0; i < n; i++) {
+            document.write("<tr>");
+            for (j = 0; j < n; j++) {
+                sel = (i + j) % 2;
+                if (sel == 0) {
+                    str = "class='r1'";
+                } else {
+                    str = "class='r2'";
+                }
+                document.write("<td " + str + ">");
+                if (j < 2) {
+                    document.write("<div class='black-piece'></div>");
+                }
+                else if (j >= n - 2) {
+                    document.write("<div class='white-piece'></div>");
+                }
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+
+    <h1>Числа, произведение цифр которых равно сумме этих цифр</h1>
+
+    <table>
+        <tr>
+            <td>Введите число:</td>
+            <td>
+                <input type="text" id="parametr_1">
+                <input type="button" value="Вычислить" onclick="calculate_1();">
+            </td>
+        </tr>
+        <tr>
+            <td>Результат: </td><td><p id="result_1"></td>
+            </td>
+        </tr>
+    </table>
+
+    <h1>Поиск наибольшей цифры в числе</h1>
+
+    <table>
+        <tr>
+          <td>Введите число:</td>
+          <td>
+            <input type="text" id="parametr_2">
+            <input type="button" value="Вычислить" onclick="calculateMaxDigit();">
+          </td>
+        </tr>
+        <tr>
+          <td>Результат: </td>
+          <td><p id="result_2"></p></td>
+        </tr>
+      </table>
+    
+      <script type="text/javascript">
+        function findMaxDigit(number) {
+        var maxDigit = 0;
+        while (number > 0) {
+            var digit = number % 10;
+            if (digit > maxDigit) {
+                maxDigit = digit;
+            }
+            number = Math.floor(number / 10);
+        }
+        return maxDigit;
+    }
+        function calculateMaxDigit() {
+          var inputValue = document.getElementById("parametr_2").value;
+          var maxDigit = findMaxDigit(Number(inputValue));
+          document.getElementById("result_2").innerHTML = "Наибольшая цифра: " + maxDigit;
+        }
+      </script>
+
+</body>
+
+</html>
